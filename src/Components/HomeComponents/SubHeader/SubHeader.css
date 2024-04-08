@@ -1,0 +1,23 @@
+.subHeader-container {
+    width: 100%;
+    margin: auto;
+}
+
+.subheader-contents {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.subheader-content {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0rem;
+    gap: 0.5rem;
+}
+
+.subheader-content h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgba(77, 77, 77, 0.909);
+}
