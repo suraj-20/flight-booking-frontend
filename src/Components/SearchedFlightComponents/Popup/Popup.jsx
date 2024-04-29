@@ -19,7 +19,7 @@ const Popup = () => {
     };
   }, []);
   return (
-    <div className={`popup ${showPopup ? "show" : ""}`}>
+    <div className={`popup ${showPopup ? "show" : "popup-hidden"}`}>
       <div className="popup-content">
         <div className="image-container">
           <img src={popupImage} alt="Popup" />
@@ -52,27 +52,23 @@ const Popup = () => {
               <form action="">
                 <div className="personal-details-field mt-3">
                   <div className="nameAndEmail">
-                    <div className="input-field email-field">
-                      <input type="text" placeholder="Enter Your Email" />
-                    </div>
                     <div className="input-field name-field">
                       <input type="text" placeholder="Enter Your Name" />
                     </div>
-                  </div>
-                  <div className="number-field">
-                    <div className="number-input-field">
-                      <div class="input-number-field input-group">
-                        <input
-                          type="number"
-                          id="flightNumber"
-                          name="flightNumber"
-                          placeholder="82871-46841"
-                        />
-                      </div>
+                    <div className="input-field email-field">
+                      <input type="text" placeholder="Enter Your Email" />
+                    </div>
+                    <div className="input-field number-field">
+                      <input
+                        type="number"
+                        id="flightNumber"
+                        name="flightNumber"
+                        placeholder="82871-46841"
+                      />
                       <div className="verticalLine">
                         <div className="line"></div>
                       </div>
-                      <div class="input-select-field input-group">
+                      <div className="input-select-field input-group">
                         <select id="cityCode" name="cityCode">
                           <option value="NYC">
                             <div className="flag">flag</div>
@@ -87,7 +83,7 @@ const Popup = () => {
                   </div>
                 </div>
                 <div className="getFreeQuoteBtn mt-3">
-                  <button type="submit">Get a Free Quote</button>
+                  <button type="submit">Cliam Discount</button>
                 </div>
 
                 <div className="termsAndCondition mt-3">

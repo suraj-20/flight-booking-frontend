@@ -3,9 +3,9 @@ import stars from "../../../Assets/Images/svg.star.svg";
 import crossArrow from "../../../Assets/Images/cross-arrow.svg";
 import bedge from "../../../Assets/Images/online-offer-bedge.svg";
 import { IoTimeOutline } from "react-icons/io5";
-import callback from "../../../Assets/Images/callback.svg";
-import booknow from "../../../Assets/Images/booknow.svg";
-import farelock from "../../../Assets/Images/farelock.svg";
+// import callback from "../../../Assets/Images/callback.svg";
+// import booknow from "../../../Assets/Images/booknow.svg";
+// import farelock from "../../../Assets/Images/farelock.svg";
 import lowestfare from "../../../Assets/Images/lowestfare.svg";
 import confidence from "../../../Assets/Images/confidence.svg";
 import assistance from "../../../Assets/Images/assistance.svg";
@@ -76,33 +76,6 @@ const LeftContainer = () => {
               <div className="grid">
                 <div className="grid-content">
                   <div className="img">
-                    <img src={callback} alt="" />
-                  </div>
-                  <div className="grid-contents">
-                    <p className="heading">Callback</p>
-                    <p className="peragraph">Instant free call</p>
-                  </div>
-                </div>
-                <div className="grid-content">
-                  <div className="img">
-                    <img src={booknow} alt="" />
-                  </div>
-                  <div className="grid-contents">
-                    <p className="heading">Book Now</p>
-                    <p className="peragraph">Pay later</p>
-                  </div>
-                </div>
-                <div className="grid-content">
-                  <div className="img">
-                    <img src={farelock} alt="" />
-                  </div>
-                  <div className="grid-contents">
-                    <p className="heading">Fare Lock</p>
-                    <p className="peragraph">24h offer lock</p>
-                  </div>
-                </div>
-                <div className="grid-content">
-                  <div className="img">
                     <img src={lowestfare} alt="" />
                   </div>
                   <div className="grid-contents">
@@ -143,7 +116,7 @@ const LeftContainer = () => {
             </p>
           </div>
         </div>
-        <div className="rated-stars mt-4">
+        <div className="rated-stars mt-2">
           <span>
             Rated <b>4.7 </b>
             <img src={stars} alt="stars" />

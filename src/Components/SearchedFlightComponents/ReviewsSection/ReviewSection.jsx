@@ -48,7 +48,7 @@ const testimonials = [
 const ReviewSection = () => {
   return (
     <div className="reviewSection-container">
-      <h2 style={{marginBlock: "2rem"}}>Our Happy Customers</h2>
+      <h2 style={{ marginBlock: "2rem" }}>Our Happy Customers</h2>
       <div className="carousel-container">
         <Swiper
           slidesPerView={1}
@@ -70,8 +70,8 @@ const ReviewSection = () => {
           className="mySwiper"
         >
           {testimonials.map((testimonial, index) => (
-            <SwiperSlide>
-              <div key={testimonial.id} className="carousel-group">
+            <SwiperSlide key={testimonial.id}>
+              <div className="carousel-group">
                 <div className="upper-carousel-content">
                   <div className="reviewerImage">
                     <img

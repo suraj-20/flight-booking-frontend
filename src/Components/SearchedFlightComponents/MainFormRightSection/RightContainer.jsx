@@ -1,29 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
 import "./RightContainer.css";
-import { BiSolidPhoneCall } from "react-icons/bi";
+import { HiLocationMarker, HiOutlineUserGroup } from "react-icons/hi";
+import { FaCalendarAlt, FaUser } from "react-icons/fa";
 
 const RightContainer = () => {
+  const [isOneWay, setIsOneWay] = useState(true);
+  const [numAdults, setNumAdults] = useState(1);
+  const [numChildren, setNumChildren] = useState(0);
+  const [numInfants, setNumInfants] = useState(0);
+  const [showPassengerOption, setShowPassengerOption] = useState(false);
+
+  const handleToggleFlightType = (value) => {
+    setIsOneWay(value === "one-way");
+  };
+
+  const handleToggleShowPassenger = () => {
+    setShowPassengerOption(!showPassengerOption);
+  };
+
+  const handlePassengerChange = (type, increment) => {
+    switch (type) {
+      case "adults":
+        setNumAdults(Math.max(numAdults + increment, 0));
+        break;
+      case "children":
+        setNumChildren(Math.max(numChildren + increment, 0));
+        break;
+      case "infants":
+        setNumInfants(Math.max(numInfants + increment, 0));
+        break;
+      default:
+        break;
+    }
+  };
+
+  const preventDefaultAction = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className="right-container-content">
       <div className="upper-content mb-3">
-        <div className="callUsNow">
-          <div className="callUsNowContent">
-            <h3>Call Us Now</h3>
-            <h4>to get more details</h4>
-          </div>
-          <div className="phoneNumberBtn">
-            <a href="/">
-              <BiSolidPhoneCall className="icon" /> <span>(8330 436-0717)</span>
-            </a>
-          </div>
-        </div>
-
         <div className="contectUsContent mt-3">
           <div className="verticalLine">
             <div className="line"></div>
           </div>
           <div className="contentInPera">
-            <p>Or fill out the form and our agent will contact you</p>
+            <p>Fill out the form and modify your destication.</p>
           </div>
           <div className="verticalLine">
             <div className="line"></div>
@@ -32,171 +55,156 @@ const RightContainer = () => {
       </div>
 
       <div className="contactUsHeading">
-        <h3>Or fill out the form and our agent will contact you</h3>
+        <h3>Fill out the form and modify your destication.</h3>
       </div>
 
-      <form action="">
-        <div className="dropdown-content">
-          <div className="dropdown-contents">
-            <div class="dropdown">
+      <div className="formDiv-container">
+        <form className="formDiv" action="">
+          <div className="way-of-flight">
+            <div className="round-trip">
               <button
-                class="btn btn-secondary dropdown-toggle"
-                type="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
+                className={!isOneWay ? "active" : ""}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleToggleFlightType("round-trip");
+                }}
               >
-                Round-Trip
+                Round trip
               </button>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="/#">
-                    Action
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="/#">
-                    Another action
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="/#">
-                    Something else here
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div class="dropdown">
               <button
-                class="btn btn-secondary dropdown-toggle"
-                type="button"
-                data-bs-toggle="dropdown"
-                // aria-expanded="false"
+                className={isOneWay ? "active" : ""}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleToggleFlightType("one-way");
+                }}
               >
-                1 Traveler
+                One way
               </button>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="/#">
-                    Action
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="/#">
-                    Another action
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="/#">
-                    Something else here
-                  </a>
-                </li>
-              </ul>
             </div>
-            <div class="dropdown">
-              <button
-                class="btn btn-secondary dropdown-toggle"
-                type="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
+          </div>
+          <div data-aos="fade-up" className="modify-cardDiv cardDiv grid">
+            <div className="modify-column-input">
+              <div className="modify-input-field departure-input">
+                <HiLocationMarker className="icon" />
+                <input type="text" name="" id="" placeholder="Leaving From" />
+              </div>
+              <div className="modify-input-field destination-input">
+                <HiOutlineUserGroup className="icon" />
+                <input type="text" name="" id="" placeholder="Going to" />
+              </div>
+              <div className="modify-input-field departure-date-input">
+                <FaCalendarAlt className="icon" />
+                <input type="date" name="" id="" placeholder="Departing" />
+              </div>
+
+              {isOneWay ? (
+                <div className="modify-input-field returning-date-input">
+                  <FaCalendarAlt className="icon" />
+                  <input type="date" name="" id="" placeholder="Returning" />
+                </div>
+              ) : (
+                ""
+              )}
+            </div>
+
+            <div className="modify-column-search">
+              <div
+                onClick={handleToggleShowPassenger}
+                className="modify-input-field passenger-input"
               >
-                Economy
-              </button>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="/#">
-                    Action
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="/#">
-                    Another action
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="/#">
-                    Something else here
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div className="search-form mt-3">
-          <div className="search-form_row">
-            <div className="location-blocks">
-              <div className="form-group location-from">
-                <span>From</span>
-                <input type="text" placeholder="City or Airport" />
+                <FaUser className="icon" />
+                <span style={{padding: "0.8rem"}}>Passenger</span>
               </div>
-              <div className="form-group location-to">
-                <span>To</span>
-                <input type="text" placeholder="City or Airport" />
-              </div>
-            </div>
-            <div className="search-from-period">
-              <div className="form-group">
-                <span>Departure</span>
-                <input type="date" name="" id="" />
-              </div>
-              <div className="form-group">
-                <span>Return</span>
-                <input type="date" name="" id="" />
+              <div className="searchBtn modifyBtn">
+                <button type="submit">Modify</button>
               </div>
             </div>
           </div>
-        </div>
 
-        <div className="personal-details-field mt-3">
-          <div className="nameAndEmail">
-            <div className="input-field email-field">
-              <input type="text" placeholder="Enter Your Email" />
-            </div>
-            <div className="input-field name-field">
-              <input type="text" placeholder="Enter Your Name" />
-            </div>
+          <div className="fligh-class-dropdown">
+            <select
+              className="dropdown-flight-class modify-flight-class"
+              aria-label="Default select example"
+            >
+              <option value="Economy">Economy</option>
+              <option value="Premium Economy">Premium Economy</option>
+              <option value="Business">Business</option>
+              <option value="First">First</option>
+            </select>
           </div>
-          <div className="number-field">
-            <div className="number-input-field">
-              <div class="input-number-field input-group">
-                <input
-                  type="number"
-                  id="flightNumber"
-                  name="flightNumber"
-                  placeholder="82871-46841"
-                />
+
+          {showPassengerOption && (
+            <div className="passenger-options modify-passenger-option">
+              <div className="passenger-type">
+                <label>Adults:</label>
+                <div className="addOrSubBtn">
+                  <button
+                    onClick={(e) => {
+                      preventDefaultAction(e);
+                      handlePassengerChange("adults", -1);
+                    }}
+                  >
+                    -
+                  </button>
+                  <span>{numAdults}</span>
+                  <button
+                    onClick={(e) => {
+                      preventDefaultAction(e);
+                      handlePassengerChange("adults", 1);
+                    }}
+                  >
+                    +
+                  </button>
+                </div>
               </div>
-              <div className="verticalLine">
-                <div className="line"></div>
+              <div className="passenger-type">
+                <label>Children:</label>
+                <div className="addOrSubBtn">
+                  <button
+                    onClick={(e) => {
+                      preventDefaultAction(e);
+                      handlePassengerChange("children", -1);
+                    }}
+                  >
+                    -
+                  </button>
+                  <span>{numChildren}</span>
+                  <button
+                    onClick={(e) => {
+                      preventDefaultAction(e);
+                      handlePassengerChange("children", 1);
+                    }}
+                  >
+                    +
+                  </button>
+                </div>
               </div>
-              <div class="input-select-field input-group">
-                <select id="cityCode" name="cityCode">
-                  <option value="NYC">
-                    <div className="flag">flag</div>
-                    <div className="code">+1</div>
-                  </option>
-                  <option value="LAX">+91</option>
-                  <option value="CHI">+86</option>
-                  <option value="SFO">+33</option>
-                </select>
+              <div className="passenger-type">
+                <label>Infants:</label>
+                <div className="addOrSubBtn">
+                  <button
+                    onClick={(e) => {
+                      preventDefaultAction(e);
+                      handlePassengerChange("infants", -1);
+                    }}
+                  >
+                    -
+                  </button>
+                  <span>{numInfants}</span>
+                  <button
+                    onClick={(e) => {
+                      preventDefaultAction(e);
+                      handlePassengerChange("infants", 1);
+                    }}
+                  >
+                    +
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        <div className="getFreeQuoteBtn mt-3">
-          <button type="submit">Claim Your Discount</button>
-        </div>
-
-        <div className="termsAndCondition mt-3">
-          <p>
-            <strong>100% Safe. No purchase required.</strong> I agree to provide
-            my phone number and to be contacted by clicking “Get a Free Quote”.
-            Your <a href="/">privacy</a> is respected.{" "}
-            <a href="/">Terms of Service</a>.
-          </p>
-        </div>
-      </form>
+          )}
+        </form>
+      </div>
     </div>
   );
 };

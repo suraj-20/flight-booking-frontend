@@ -34,7 +34,7 @@ const Work = () => {
       <div className="work-card-container grid">
         {workCard.map((work) => {
           return (
-            <div key={work.id} className="content-container">
+            <div key={work.id} className="content-containers">
               <div className="work-card-image">
                 <img src={work.card_image} alt="" />
               </div>

@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SearchedFlight from "./Pages/SearchedFlightPage/SearchedFlight.jsx";
-import Footer from "./Components/SearchedFlightComponents/FooterSection/Footer.jsx";
+// import Footer from "./Components/SearchedFlightComponents/FooterSection/Footer.jsx";
 import Home from "./Pages/HomePage/Home.jsx";
 import Mytrip from "./Pages/MyTrips/MyTrips.jsx";
 

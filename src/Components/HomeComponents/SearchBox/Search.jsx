@@ -99,10 +99,10 @@ const Search = () => {
 
         <div className="fligh-class-dropdown">
           <select
-            class="dropdown-flight-class"
+            className="dropdown-flight-class"
             aria-label="Default select example"
           >
-            <option selected>Economy</option>
+            <option value="Economy">Economy</option>
             <option value="1">Premium Economy</option>
             <option value="2">Business</option>
             <option value="3">First</option>
