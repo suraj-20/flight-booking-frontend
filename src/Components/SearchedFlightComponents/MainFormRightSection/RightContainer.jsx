@@ -97,7 +97,7 @@ const RightContainer = () => {
                 <input type="date" name="" id="" placeholder="Departing" />
               </div>
 
-              {isOneWay ? (
+              {!isOneWay ? (
                 <div className="modify-input-field returning-date-input">
                   <FaCalendarAlt className="icon" />
                   <input type="date" name="" id="" placeholder="Returning" />

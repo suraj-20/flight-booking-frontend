@@ -11,7 +11,7 @@
   width: 90%;
   margin: auto;
   justify-content: space-between;
-  padding: 1.5rem 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .nav-logo img {
@@ -19,54 +19,16 @@
   height: 3rem;
 }
 
-.phoneNumber {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  /* border: 1px solid #1c23333d; */
-  border-radius: 50px;
-  background: #1c23333d;
-  /* width: 30rem; */
-  padding: 5px;
-  height: 55px;
-}
-
-.phoneNumber br {
-  display: none;
-}
-
-.phoneNumber p {
-  margin: 0;
-  padding: 0 2rem;
-  font-size: 0.9rem;
-  color: #fff;
+.login-btn {
+  padding: 10px 50px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  background-color: #fff;
+  color: #000;
   font-weight: 500;
 }
 
-.callBtn {
-  height: 45px;
-  width: 200px;
-  padding: 4px 0;
-  border: none;
-  border-radius: 50px;
-  gap: 2px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.callBtn .icon {
-  font-size: 1.5rem;
-}
-
-.callBtn span {
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.onlyCallBtn {
-  display: none;
-}
 
 @media (max-width: 1200px) {
   .header .header-container {

@@ -5,7 +5,6 @@ import MainForm from "../../Components/SearchedFlightComponents/MainFormSection/
 import Header from "../../Components/SearchedFlightComponents/Header/Header";
 import RecentDeals from "../../Components/SearchedFlightComponents/RecentCheapDeals/RecentDeals";
 import StepSection from "../../Components/SearchedFlightComponents/StepsSection/StepSection";
-// import StarSection from "../../Components/SearchedFlightComponents/StarsSection/StarSection";
 import ReviewSection from "../../Components/SearchedFlightComponents/ReviewsSection/ReviewSection";
 import Popup from "../../Components/SearchedFlightComponents/Popup/Popup";
 
@@ -14,7 +13,6 @@ const SearchedFlight = () => {
     <div className="searchedFlight">
       <Popup />
       <div className="searchedFlightContainer">
-        {/* <img className="mainImage" src={mainImage} alt="" /> */}
         <Header />
         <MainForm />
       </div>
@@ -26,7 +24,7 @@ const SearchedFlight = () => {
       </div>
       <div className="reviewAndStarSection">
         <div className="bothSection">
-          {/* <StarSection /> */}
+          {/* <StarSection />  */}
           <ReviewSection />
         </div>
       </div>

@@ -6,6 +6,10 @@
   text-align: start !important;
 }
 
+.signup-content-container {
+  width: 100% !important;
+}
+
 .signup-popup {
   width: 30% !important;
   border-radius: 15px;

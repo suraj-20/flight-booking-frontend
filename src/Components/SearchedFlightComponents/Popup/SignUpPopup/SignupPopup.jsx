@@ -8,7 +8,7 @@ const SignupPopup = ({ onClose }) => {
   return (
     <div className={`popup signup-popup show`}>
       <div className="popup-content">
-        <div className="content-container">
+        <div className="content-container signup-content-container">
           <span className="popup-close" onClick={onClose}>
             &times;
           </span>

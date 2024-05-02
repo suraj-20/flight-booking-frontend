@@ -60,11 +60,11 @@
 }
 
 .content-container {
-  width: 60% !important;
+  width: 60%;
 }
 
 .content-container .content {
-  /* padding: 2rem; */
+  padding: 2rem;
   text-align: center;
 }
 
@@ -143,7 +143,7 @@
   }
 
   .content-container {
-    width: 100% !important;
+    width: 100%;
   }
 }
 
@@ -156,7 +156,7 @@
 
 @media (max-width: 500px) {
   .content-container .content {
-    padding: 0rem;
+    padding: 1rem;
   }
   .input-field {
     border: 1px solid rgba(128, 128, 128, 0.66) !important;

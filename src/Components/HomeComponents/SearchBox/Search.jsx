@@ -73,7 +73,7 @@ const Search = () => {
               <input type="date" name="" id="" placeholder="Departing" />
             </div>
 
-            {isOneWay ? (
+            {!isOneWay ? (
               <div className="input-field returning-date-input">
                 <FaCalendarAlt className="icon" />
                 <input type="date" name="" id="" placeholder="Returning" />

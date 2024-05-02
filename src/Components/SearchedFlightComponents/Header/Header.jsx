@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Header.css";
 import img1 from "../../../Assets/Images/logo.svg";
-import { BiSolidPhoneCall } from "react-icons/bi";
 import SignupPopup from "../Popup/SignUpPopup/SignupPopup";
 
 const Header = () => {
@@ -10,12 +9,12 @@ const Header = () => {
   const handleTogglePopup = () => {
     setShowPopup(!showPopup);
 
-    if(!showPopup) {
-      document.body.style.background = "rgba(0, 0, 0, 0.5)"
-      document.body.style.overflow = "hidden"
+    if (!showPopup) {
+      document.body.style.background = "rgba(0, 0, 0, 0.5)";
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.background = "initial"
-      document.body.style.overflow = "auto"
+      document.body.style.background = "initial";
+      document.body.style.overflow = "auto";
     }
   };
   return (
@@ -28,12 +27,9 @@ const Header = () => {
           <button
             onClick={handleTogglePopup}
             type="submit"
-            className="home-callbtn"
+            className="login-btn"
           >
-            SignUp/Login
-          </button>
-          <button type="submit" className="onlyCallBtn">
-            <BiSolidPhoneCall className="icon" />
+            Login
           </button>
         </div>
       </div>

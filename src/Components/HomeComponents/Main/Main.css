@@ -97,7 +97,7 @@ video {
 }
 
 
-input {
+.input-field input, .modify-input-field input {
   background: none;
   border: none;
   outline: none;
